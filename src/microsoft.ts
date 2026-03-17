@@ -43,7 +43,7 @@ export class MicrosoftDriver extends Oauth2Driver<MicrosoftToken, MicrosoftScope
   protected configureAccessTokenRequest(request: ApiRequest): void {
     request
       .header('Content-Type', 'application/x-www-form-urlencoded')
-      .field('grant_type', 'authorization_code')
+      .field('grant_type', 'client_credentials')
       .field('client_id', this.config.clientId)
       .field('client_secret', this.config.clientSecret)
       .field('redirect_uri', this.config.callbackUrl)
